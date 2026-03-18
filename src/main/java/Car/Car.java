@@ -10,11 +10,14 @@ public class Car {
         this.name = name;
         this.position = 0;
     }
-    Random random= new Random();
+
+    Random random = new Random();
+    private static final int FORWARD_THRESHOLD = 4;
+
     public void move() {
 
         int roll = random.nextInt(10);
-        if (roll >= 4) {
+        if (roll >= FORWARD_THRESHOLD) {
             position++;
         }
     }
