@@ -1,5 +1,7 @@
 package Car;
 
+import java.util.Random;
+
 public class Car {
     String name;
     int position;
@@ -8,9 +10,10 @@ public class Car {
         this.name = name;
         this.position = 0;
     }
-
+    Random random= new Random();
     public void move() {
-        int roll = (int) (Math.random() * 10);
+
+        int roll = random.nextInt(10);
         if (roll >= 4) {
             position++;
         }
