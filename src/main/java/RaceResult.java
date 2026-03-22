@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RaceResult {
-    private List<Car> cars;
+    private final List<Car> cars;
 
-    public RaceResult(List<Car> cars) {
-        this.cars = new ArrayList<>(cars);
+    public RaceResult(List<Car> newCars) {
+        this.cars = new ArrayList<>(newCars);
     }
     public List<Car> getResult() {
         List<Car> resultCars = new ArrayList<>();
