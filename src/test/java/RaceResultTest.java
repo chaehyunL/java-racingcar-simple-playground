@@ -34,3 +34,4 @@ public class RaceResultTest {
         assertThat(winners).extracting(Car::getName).containsExactlyInAnyOrder("A", "B");
     }
 }
+
