@@ -17,5 +17,4 @@ public class RaceResult {
                 .toList();
         return resultCars;
     }
-
 }
