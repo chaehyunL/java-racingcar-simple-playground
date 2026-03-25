@@ -1,16 +1,28 @@
-import java.util.*;
+import java.util.Random;
 
-class Car {
+public class Car {
     String name;
-    int position;
-    public Car(String name){
-        this.name=name;
-        this.position=0;
+    private int position = 0;
+    private static final int FORWARD_THRESHOLD = 4;
+
+    public Car(String newName) {
+        this.name = newName;
     }
-    public void move(){
-        int roll=(int)(Math.random()*10);
-        if(roll>=4){
+
+    RandomNumberGenerator rng = new RandomNumberGenerator();
+    int randomNumber = rng.generate();
+
+    public void move(int randomNumber) {
+        if (randomNumber >= FORWARD_THRESHOLD) {
             position++;
         }
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public int getPosition() {
+        return this.position;
     }
 }
