@@ -15,32 +15,19 @@ public class RacingGame {
 
     RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
 
-    private void moveCars() {
+    public void moveCars() {
         for (Car car : cars) {
             car.move(randomNumberGenerator.generate());
         }
     }
-
-    private void showRace() {
-        for (Car car : cars) {
-            String dash = "-".repeat(car.getPosition());
-            System.out.println(car.getName() + ": " + dash);
-        }
-        System.out.println(" ");
+    public void playRound(){
+        moveCars();
     }
-
-    private void showResult() {
-        RaceResult raceResult = new RaceResult(cars);
-        List<Car> winners = raceResult.getResult();
-        String winnerNames = winners.stream().map(Car::getName).collect(Collectors.joining(", "));
-        System.out.printf(winnerNames + "가 최종 우승했습니다.");
+    public List<Car> getCars(){
+        return cars;
     }
-
-    public void playGame() {
-        for (int i = 0; i < count; i++) {
-            moveCars();
-            showRace();
-        }
-        showResult();
+    public List<Car> getWinners(){
+        RaceResult raceResult= new RaceResult(cars);
+        return raceResult.getResult();
     }
 }
