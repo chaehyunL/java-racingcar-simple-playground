@@ -10,14 +10,19 @@ public class RaceResult {
         this.cars = new ArrayList<>(newCars);
     }
 
+    public int getMaxposition(){
+        int maxPosition=cars.stream().
+                mapToInt(Car::getPosition).max()
+                .orElse(0);
+        return maxPosition;
+    }
     public List<Car> getResult() {
         List<Car> resultCars = new ArrayList<>();
-        int maxPosition = cars.stream()
-                .mapToInt(Car::getPosition).max()
-                .orElse(0);
+        int maxPosition = getMaxposition();
         resultCars = cars.stream()
                 .filter(car -> car.getPosition() == maxPosition)
                 .toList();
         return resultCars;
     }
+
 }
