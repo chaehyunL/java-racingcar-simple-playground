@@ -1,7 +1,12 @@
 package controller;
 
-import view.*;
-import model.*;
+import view.InputView;
+import view.OutputView;
+
+import model.Car;
+import model.RaceResult;
+import model.RandomNumberGenerator;
+import model.RacingGame;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +23,7 @@ public class Controller {
         int number = InputView.getTrynumber();
         RacingGame racingGame= new RacingGame(cars);
 
-        OutputView.getOutput();
+        OutputView.printResultTitle();
         while(number>0){
             racingGame.playRound();
             OutputView.printRace(cars);

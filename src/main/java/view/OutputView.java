@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 
 public class OutputView {
-    public static void getOutput() {
+    public static void printResultTitle() {
         System.out.println("실행 결과");
     }
 
