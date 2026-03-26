@@ -16,9 +16,15 @@ public class Controller {
         for (String name : carNames) {
             cars.add(new Car(name.trim()));
         }
-        OutputView.getOutput();
+        RacingGame racingGame= new RacingGame(cars);
 
-        RacingGame racingGame = new RacingGame(cars, number);
-        racingGame.playGame();
+        OutputView.getOutput();
+        while(number>0){
+            racingGame.playRound();
+            OutputView.printRace(cars);
+            number--;
+        }
+        RaceResult raceResult=new RaceResult(cars);
+        OutputView.printWinners(raceResult.getResult());
     }
 }
