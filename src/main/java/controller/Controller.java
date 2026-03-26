@@ -4,7 +4,7 @@ import view.InputView;
 import view.OutputView;
 
 import model.Car;
-import model.RaceResult;
+
 import model.RandomNumberGenerator;
 import model.RacingGame;
 
@@ -29,7 +29,6 @@ public class Controller {
             OutputView.printRace(cars);
             number--;
         }
-        RaceResult raceResult=new RaceResult(cars);
-        OutputView.printWinners(raceResult.getResult());
+        OutputView.printWinners(racingGame.getResult());
     }
 }

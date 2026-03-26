@@ -1,5 +1,5 @@
 import model.Car;
-import model.RaceResult;
+import model.RacingGame;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -17,8 +17,8 @@ public class RaceResultTest {
         //when:'A'자동차는 4를 부여받고, 'B'자동차는 0을 부여받을때
         car1.move(4);
         car2.move(0);
-        RaceResult raceResult = new RaceResult(List.of(car1, car2));
-        List<Car> winners = raceResult.getResult();
+        RacingGame racingGame=new RacingGame(List.of(car1,car2));
+        List<Car> winners = racingGame.getResult();
         //Then:우승자는 A로 결정된다.
         assertThat(winners).hasSize(1);
         assertThat(winners.get(0).getName()).isEqualTo("A");
@@ -33,8 +33,8 @@ public class RaceResultTest {
         //when:'A'와 'B'모두 4숫자를 부여받을때
         car1.move(4);
         car2.move(4);
-        RaceResult raceResult = new RaceResult(List.of(car1, car2));
-        List<Car> winners = raceResult.getResult();
+        RacingGame racingGame=new RacingGame(List.of(car1,car2));
+        List<Car> winners = racingGame.getResult();
         //then:우승자는 'A','B' 모두로 결정된다
         assertThat(winners).hasSize(2);
         assertThat(winners).extracting(Car::getName).containsExactlyInAnyOrder("A", "B");
