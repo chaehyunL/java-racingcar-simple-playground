@@ -6,11 +6,11 @@ import java.util.stream.Collectors;
 
 public class RacingGame {
     List<Car> cars = new ArrayList<>();
-    int count;
 
-    public RacingGame(List<Car> newCars, int newcount) {
+
+    public RacingGame(List<Car> newCars) {
         this.cars = newCars;
-        this.count = newcount;
+
     }
 
     RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
@@ -20,14 +20,11 @@ public class RacingGame {
             car.move(randomNumberGenerator.generate());
         }
     }
-    public void playRound(){
+    public void playRound() {
         moveCars();
     }
     public List<Car> getCars(){
         return cars;
     }
-    public List<Car> getWinners(){
-        RaceResult raceResult= new RaceResult(cars);
-        return raceResult.getResult();
-    }
+
 }
