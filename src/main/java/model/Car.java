@@ -9,9 +9,6 @@ public class Car {
         this.name = newName;
     }
 
-    RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
-    int randomNumber = randomNumberGenerator.generate();
-
     public void move(int randomNumber) {
         if (randomNumber >= FORWARD_THRESHOLD) {
             position++;
