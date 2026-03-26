@@ -15,13 +15,10 @@ public class RacingGame {
 
     RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
 
-    public void moveCars() {
+    public void playRound() {
         for (Car car : cars) {
             car.move(randomNumberGenerator.generate());
         }
-    }
-    public void playRound() {
-        moveCars();
     }
     public List<Car> getCars(){
         return cars;
