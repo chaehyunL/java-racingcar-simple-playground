@@ -15,7 +15,8 @@ public class RaceResult {
         int maxPosition = cars.stream()
                 .mapToInt(Car::getPosition).max()
                 .orElse(0);
-        resultCars = cars.stream().filter(car -> car.getPosition() == maxPosition)
+        resultCars = cars.stream()
+                .filter(car -> car.getPosition() == maxPosition)
                 .toList();
         return resultCars;
     }
